@@ -1,4 +1,4 @@
-log.info("Begin JDBCExample query code");
+log.info("Begin DB2 query code");
 
 if (log.isFinestEnabled()) {
 	log.finest("parameters are: " + parameters);
@@ -232,5 +232,5 @@ if (log.isDebugEnabled() || applog.isDebugEnabled()) {
 	applog.debug(logMessage);
 }
 
-log.info("End JDBCExample query code");
+log.info("End DB2 query code");
 return result;

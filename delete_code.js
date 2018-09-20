@@ -1,4 +1,4 @@
-log.info("Begin JDBCExample delete code");
+log.info("Begin DB2 delete code");
 var where = "";
 var sep = "";
 var result = {};
@@ -69,5 +69,5 @@ if (log.isDebugEnabled() || applog.isDebugEnabled()) {
 	applog.debug(logMessage);
 }
 
-log.info("End JDBCExample delete code");
+log.info("End DB2 delete code");
 return json;

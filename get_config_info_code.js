@@ -1,52 +1,60 @@
-log.info("Begin JDBCExample getConfigInfo code");
+log.info("Begin DB2 getConfigInfo code");
 var configInfo = {
 	ui_config: [{
-		display: "Hostname",
+		display: "ホスト名",
 		type: "string",
-		length: 90,
+		length: 20,
 		required: true,
 		parameterName: "hostname",
-		placeholder: "Enter the hostname",
-		description: "Enter Hostname  (e.g., localhost)"
+		placeholder: "ホスト名を入力してください。",
+		description: "ホスト名を入力してください。"
 	}, {
-		display: "Port",
+		display: "ポート番号",
 		type: "number",
-		length: 10,
-		required: false,
-		parameterName: "port",
-		placeholder: "Enter the port number",
-		description: "The port number for your host (optional)"
-	}, {
-		display: "Database Name",
-		type: "string",
-		length: 90,
+		length: 5,
 		required: true,
-		parameterName: "databaseName",
-		placeholder: "Enter the database name",
-		description: "Name of your Database"
+		parameterName: "port",
+		placeholder: "ポート番号を入力してください。",
+		description: "ポート番号を入力してください。"
 	}, {
-		display: "User name",
+		display: "ロケーション名",
 		type: "string",
-		length: 90,
-		required: false,
-		parameterName: "username",
-		placeholder: "Enter the authentication username",
-		description: "Authorized Username for your Database"
+		length: 20,
+		required: true,
+		parameterName: "locationName",
+		placeholder: "ロケーション名を入力してください。",
+		description: "ロケーション名を入力してください。SELECT CURRENT SERVER FROM SYSIBM.SYSDUMMY1 で確認できます）"
 	}, {
-		display: "Password",
+		display: "スキーマ名",
+		type: "string",
+		length: 20,
+		required: true,
+		parameterName: "schema",
+		placeholder: "スキーマ名を入力してください。",
+		description: "スキーマ名を入力してください。"
+	}, {
+		display: "ユーザ名",
+		type: "string",
+		length: 10,
+		required: true,
+		parameterName: "username",
+		placeholder: "ユーザ名を入力してください。",
+		description: "ユーザ名を入力してください。"
+	}, {
+		display: "パスワード",
 		type: "secret",
-		length: 90,
-		required: false,
+		length: 10,
+		required: true,
 		parameterName: "password",
-		placeholder: "Enter the password for the database user",
-		description: "The password for the database user. Once saved, it is encrypted and can therefore appear longer than expected."
+		placeholder: "パスワードを入力してください。",
+		description: "パスワードを入力してください（保存後は暗号化されます）"
 	}],
 	// Environment variables used in all JS code (e.g., env.jdbcInfo)
 	env: {
 		System: Java.type("java.lang.System"),
 		DriverManager: Java.type("java.sql.DriverManager"),
-		jdbcInfo: "jdbc:derby:",
-		sqlSelectTest: "select * from \"SYS\".\"SYSTABLES\" FETCH FIRST 1 ROWS ONLY",
+		jdbcInfo: "jdbc:db2:",
+		sqlSelectTest: "select * from SYSIBM.SYSTABLES FETCH FIRST 1 ROWS ONLY",
 		leftQuote: "\"",
 		rightQuote: "\""
 
@@ -57,7 +65,7 @@ var configInfo = {
 	}
 };
 if (log.isDebugEnabled()) {
-	log.debug("JDBCExample - getConfigInfo return" + configInfo);
+	log.debug("DB2 - getConfigInfo return" + configInfo);
 }
-log.info("End JDBCExample getConfigInfo code");
+log.info("End DB2 getConfigInfo code");
 return configInfo;

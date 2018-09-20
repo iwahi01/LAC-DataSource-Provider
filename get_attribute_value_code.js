@@ -1,4 +1,4 @@
-log.info("Begin JDBCExample getAttributeValue code");
+log.info("Begin DB2 getAttributeValue code");
 
 if (log.isFinestEnabled()) {
 	log.finest("entityName " + datasourceUtil.decodeURISegment(entityName));
@@ -51,10 +51,10 @@ if (rs.next()) {
 rs.close();
 pstmt.close();
 if (log.isDebugEnabled() || applog.isDebugEnabled()) {
-	logMessage = "JDBCExample - getAttributeValue - Return: " + result;
+	logMessage = "DB2 - getAttributeValue - Return: " + result;
 	log.debug(logMessage);
 	applog.debug(logMessage);
 }
 
-log.info("End JDBCExample getAttributeValue code");
+log.info("End DB2 getAttributeValue code");
 return result;

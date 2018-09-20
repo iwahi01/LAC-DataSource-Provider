@@ -1,16 +1,17 @@
-log.info("Begin JDBCExample configure code");
+log.info("Begin DB2 configure code");
 //the get_config_idnfo_code.js defined the variable names below:
-var databaseName = settings && settings.databaseName || "NORTHWIND";
-var hostname = settings && settings.hostname || "NORTHWIND";
-var username = settings && settings.username || "NORTHWIND";
-var password = settings && settings.password || "password";
-var port = settings && settings.port || "";
-var url = env.jdbcInfo + databaseName;
-//var url = uri + hostname + ":" + port +"/" + databaseName; // use this for most JDBC database connections
+var locationName = settings && settings.locationName;
+var hostname = settings && settings.hostname;
+var username = settings && settings.username;
+var schema = settings && settings.schema;
+var password = settings && settings.password;
+var port = settings && settings.port;
+var url = env.jdbcInfo + "//" + hostname + ":" + port + "/" + locationName + ":currentSchema=" + schema + ";";
+
 if (log.isFinestEnabled())
-	log.finest("JDBCExample -  URL " + url);
+	log.finest("DB2 -  URL " + url);
 var connection = env.DriverManager.getConnection(url, username, password);
 connection.setAutoCommit(false); //required by LAC
 
-log.info("End JDBCExample configure code");
+log.info("End DB2 configure code");
 return connection;

@@ -1,4 +1,4 @@
-log.info("JDBCExample insert code");
+log.info("DB2 insert code");
 //this example assumes 1 object
 if (log.isFinestEnabled()) {
 	log.finest("payload for insert " + payload);
@@ -59,5 +59,5 @@ if (log.isDebugEnabled() || applog.isDebugEnabled()) {
 	applog.debug(logMessage);
 }
 
-log.info("End JDBCExample insert code");
+log.info("End DB2 insert code");
 return JSON.stringify(result);

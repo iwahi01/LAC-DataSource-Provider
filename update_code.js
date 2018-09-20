@@ -1,4 +1,4 @@
-log.info("Begin JDBCExample update code");
+log.info("Begin DB2 update code");
 //this example assumes 1 object
 if (log.isFinestEnabled()) {
 	log.finest("payload for update " + payload);
@@ -92,10 +92,10 @@ result.push({numOfRows:rowCount});
 result.push(jsonPayload);
 var json = JSON.stringify(result, null, 2);
 if (log.isDebugEnabled() || applog.isDebugEnabled()) {
-	logMessage = "JDBCExample - update - result " + json;
+	logMessage = "DB2 - update - result " + json;
 	log.debug(logMessage);
 	applog.debug(logMessage);
 }
 
-log.info("End JDBCExample update code");
+log.info("End DB2 update code");
 return json;

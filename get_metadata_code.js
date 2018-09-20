@@ -1,4 +1,4 @@
-log.info("Begin JDBCExample getStructure code");
+log.info("Begin DB2 getStructure code");
 var metadata = {};
 metadata.entities = [];
 metadata.procedures = [];
@@ -109,7 +109,7 @@ rs4.close();
 
 var jsn = JSON.stringify(metadata, null, 2);
 if (log.isDebugEnabled())
-	log.debug("JDBCExample -  metadata " + jsn);
+	log.debug("DB2 -  metadata " + jsn);
 
-log.info("End JDBCExample getStructure code")
+log.info("End DB2 getStructure code")
 return jsn;

@@ -1,4 +1,4 @@
-log.finest("Begin JDBCExample getByKey");
+log.finest("Begin DB2 getByKey");
 var pkeyColumnNames = "";
 var result = "";
 var row;
@@ -42,7 +42,7 @@ if (log.isFinestEnabled()) {
 	log.finest("Key Column List " + keyColumnList);
 }
 if (log.isDebugEnabled() || applog.isDebugEnabled()) {
-	var logMessage = "JDBCExample - Get One SQL statement: " + sql;
+	var logMessage = "DB2 - Get One SQL statement: " + sql;
 	log.debug(logMessage);
 	applog.debug(logMessage);
 }
@@ -53,7 +53,7 @@ for (var i in keyColumnList) {
 	var pkName = keyColumnList[i];
 	var value = decodeURI(key[colIdx]);
 	if (log.isFinestEnabled()) {
-		log.finest("JDBCExample - PKey colName = " + pkName + ", value = " + value);
+		log.finest("DB2 - PKey colName = " + pkName + ", value = " + value);
 	}
 	datasourceUtil.objectSetValue(pstmt, colIdx + 1, pkName, value);
 	colIdx++;
@@ -116,5 +116,5 @@ if (log.isDebugEnabled() || applog.isDebugEnabled()) {
 	applog.debug(logMessage);
 }
 
-log.info("End JDBCExample getByKey");
+log.info("End DB2 getByKey");
 return result;
